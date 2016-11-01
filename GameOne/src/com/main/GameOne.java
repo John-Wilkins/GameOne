@@ -1,5 +1,6 @@
 package com.main;
 
-public class GameOne {
-
+public class GameOne
+{
+	
 }
