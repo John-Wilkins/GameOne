@@ -56,6 +56,7 @@ public class GenMap {
 		return result;
 	}
 	
+	//map does not wrap around
 	public int manDist(int valx1, int valy1, int valx2, int valy2) {
 		int dist = 0;
 		dist = Math.abs(valx1 - valx2) + Math.abs(valy1 - valy2);
@@ -64,10 +65,28 @@ public class GenMap {
 	
 	public int[] fillMap(int[] arrayx, int[] arrayy) {
 		int[] map3 = new int[map.x * map.y];
+		for(int i = 0; i < map3.length; i++) map3[i] = -1;
+		
+		for(int i = 0; i < arrayx.length; i++) {
+			map3[map.x * arrayy[i] + arrayx[i]] = i;
+		}
 		
 		int count = arrayx.length;
 		while(count < map.x * map.y) {
-			//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+			//FINISH!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+			for(int i = 0; i < map3.length; i++) {
+				if(map3[i] < 0) {
+					if() {
+						
+					} else if() {
+						
+					} else if() {
+						
+					} else if() {
+						
+					}
+				}
+			}
 		}
 		
 		return map3;
