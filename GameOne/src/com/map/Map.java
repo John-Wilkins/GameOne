@@ -10,7 +10,7 @@ public class Map {
 	
 	//r is the minimum radius between points
 	//n is the number of nodes
-	public final int r = 3;
+	public final int r = 2;
 	public final int n = 20;
 	
 	//bl is the number of random bits generated for land seeds
