@@ -1,6 +1,7 @@
 package com.map;
 
 public class Map {
+	//key variables
 	public static final int x = 100;
 	public static final int y = 100;
 	public int[] map = new int[x * y];
