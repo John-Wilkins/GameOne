@@ -1,17 +1,13 @@
 package com.map;
 
-public class Map {
-	//x is the horizontal resolution of the map
-	//y is the vertical resolution of the map
+public class Map
+{
+	//x is the horizontal resolution of the map (km)
+	//y is the vertical resolution of the map (km)
 	//map is the map array
-	public final int x = 100;
-	public final int y = 100;
+	public final int x = 40000;
+	public final int y = 20000;
 	public int[] map = new int[x * y];
-	
-	//r is the minimum radius between points
-	//n is the number of nodes
-	public final int r = 2;
-	public final int n = 20;
 	
 	//bl is the number of random bits generated for land seeds
 	//bo is the number of random bits generated for ocean seeds
