@@ -24,7 +24,7 @@ public class Window extends JFrame
 		canvas.addMouseListener(input);
 		canvas.addMouseMotionListener(input);
 		canvas.addMouseWheelListener(input);
-		canvas.createBufferStrategy(4);
+//		canvas.createBufferStrategy(4);
 //		canvas.add(new BufferedImage(x, y, BufferedImage.TYPE_INT_RGB));
 		this.setSize(x, y);
 		this.add(canvas);
