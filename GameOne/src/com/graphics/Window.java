@@ -1,6 +1,7 @@
 package com.graphics;
 
 import java.awt.Canvas;
+import java.awt.image.BufferedImage;
 
 import javax.swing.JFrame;
 
@@ -23,7 +24,9 @@ public class Window extends JFrame
 		canvas.addMouseListener(input);
 		canvas.addMouseMotionListener(input);
 		canvas.addMouseWheelListener(input);
-		this.setSize(this.x, this.y);
+		canvas.createBufferStrategy(4);
+//		canvas.add(new BufferedImage(x, y, BufferedImage.TYPE_INT_RGB));
+		this.setSize(x, y);
 		this.add(canvas);
 		this.setUndecorated(true);
 		this.setLocationRelativeTo(null);
