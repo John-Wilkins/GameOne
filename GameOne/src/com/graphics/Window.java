@@ -13,8 +13,8 @@ public class Window extends JFrame
 {
 	private int x, y;
 	private Dimension s;
+	private int[] screen;
 	private Canvas canvas;
-	private Screen screen;
 	private InputListener input;
 	
 	public Window(int x, int y)
@@ -24,9 +24,9 @@ public class Window extends JFrame
 		this.y = y;
 		
 		canvas = new Canvas();
+		screen = new int[this.x*this.y];
 		s = new Dimension(this.x, this.y);
 		input = new InputListener();
-		screen = new Screen(canvas);
 		
 		canvas.setPreferredSize(s);
 		canvas.setMaximumSize(s);
