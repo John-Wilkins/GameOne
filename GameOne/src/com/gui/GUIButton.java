@@ -1,6 +1,6 @@
 package com.gui;
 
-public class GUIButton
+public class GUIButton extends GUIComponent
 {
 	
 }
