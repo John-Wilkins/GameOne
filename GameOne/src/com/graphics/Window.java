@@ -86,10 +86,10 @@ public class Window extends JFrame
 
 	public void render()
 	{
-		int randColor = (int)(Math.random()*Integer.MAX_VALUE);
+//		int randColor = ;
 		for(int x = 0; x < this.x; x++)
 			for(int y = 0; y < this.y; y++)
-				image.setRGB(x, y, randColor);
+				image.setRGB(x, y, (int)(Math.random()*Integer.MAX_VALUE));
 		
 		g = bs.getDrawGraphics();
 		g.drawImage(image, 0, 0, canvas.getWidth(), canvas.getHeight(), null);
