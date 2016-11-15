@@ -1,7 +1,8 @@
 package com.graphics;
 
+import java.awt.BorderLayout;
 import java.awt.Canvas;
-import java.awt.image.BufferedImage;
+import java.awt.Dimension;
 
 import javax.swing.JFrame;
 
@@ -11,23 +12,33 @@ import com.controls.InputListener;
 public class Window extends JFrame
 {
 	private int x, y;
-	private Canvas canvas = new Canvas();
-	private InputListener input = new InputListener();
+	private Dimension s;
+	private Canvas canvas;
+	private Screen screen;
+	private InputListener input;
 	
 	public Window(int x, int y)
 	{
 		super("");
 		this.x = x;
 		this.y = y;
+		
+		canvas = new Canvas();
+		s = new Dimension(this.x, this.y);
+		input = new InputListener();
+		screen = new Screen(canvas);
+		
+		canvas.setPreferredSize(s);
+		canvas.setMaximumSize(s);
+		canvas.setPreferredSize(s);
 		canvas.setFocusable(true);
 		canvas.addKeyListener(input);
 		canvas.addMouseListener(input);
 		canvas.addMouseMotionListener(input);
 		canvas.addMouseWheelListener(input);
-//		canvas.createBufferStrategy(4);
-//		canvas.add(new BufferedImage(x, y, BufferedImage.TYPE_INT_RGB));
-		this.setSize(x, y);
-		this.add(canvas);
+		
+		this.setSize(this.x, this.y);
+		this.add(canvas, BorderLayout.CENTER);
 		this.setUndecorated(true);
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
