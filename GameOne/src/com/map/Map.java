@@ -5,8 +5,8 @@ public class Map
 	//x is the horizontal resolution of the map (km)
 	//y is the vertical resolution of the map (km)
 	//map is the map array
-	public final int x = 100;
-	public final int y = 100;
+	public final int x = 8;
+	public final int y = 8;
 	public int[] map = new int[x * y];
 	
 	//xo is the x dimension of each outer box
@@ -19,6 +19,8 @@ public class Map
 	
 	public int[] randx = new int[cells];
 	public int[] randy = new int[cells];
+	
+	public int[] nodes = new int[cells];
 
 	//xb is the dimension of the buffer on the x side
 	//yb is the dimension of the buffer on the y side
@@ -37,6 +39,16 @@ public class Map
 	
 	//t is the number of traits (including land/ocean) in Array 2
 	public final int t = 10;
+	
+	public int whichCell(int p) {
+		//c is initialized to -2 for the sake of debugging
+		//int c = -2;
+		
+		//int yc = (int) Math.ceil(yDim(p) / yo);
+		//int xc = (int) Math.ceil(xDim(p) / xo);
+		
+		return (int) (Math.ceil(yDim(p) / yo) * xcells + Math.ceil(xDim(p) / xo));
+	}
 	
 	//Map value
 	public int mVal(int[] map, int xdim, int ydim) {
@@ -90,6 +102,28 @@ public class Map
 		int orig = x * yo * ycell + xo * xcell + x * yb + xb;
 		
 		map[orig + x * ydim + xdim] = newVal;
+	}
+	
+	public int iToP(int[] map, int xcell, int ycell, int xdim, int ydim) {
+		//val is initialized to -2 for the sake of debugging
+		//int val = -2;
+		
+		//This is the inner box's origin
+		int orig = x * yo * ycell + xo * xcell + x * yb + xb;
+		
+		int p = orig + x * ydim + xdim;
+		return p;
+	}
+	
+	public int iToP(int[] map, int cell, int xdim, int ydim) {
+		//val is initialized to -2 for the sake of debugging
+		//int val = -2;
+		
+		//This is the inner box's origin
+		int orig = cToP(cell) + x * yb + xb;
+		
+		int p = orig + x * ydim + xdim;
+		return p;
 	}
 	
 	public void setIVal(int[] map, int cell, int xdim, int ydim, int newVal) {

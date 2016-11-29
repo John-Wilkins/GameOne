@@ -27,11 +27,16 @@ public class GenMap {
 			map.randy[i] = rand.nextInt(map.yi);
 			
 			map.setIVal(map.map, i, map.randx[i], map.randy[i], i);
+			map.nodes[i] = map.iToP(map.map, i, map.randx[i], map.randy[i]);
 		}
 		
 		long endTime = System.nanoTime();
 		double netTime = (endTime - startTime) / Math.pow(10, 9);
 		System.out.println(netTime + " seconds");
+		
+//		for(int i = 0; i < map.map.length; i++) {
+//			System.out.println(map.whichCell(i));
+//		}
 		
 		//printMap();
 	}
