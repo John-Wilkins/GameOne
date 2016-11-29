@@ -50,7 +50,7 @@ public class GenMap {
 		for(int i = 0; i < map.x; i++) {
 			System.out.println();
 			for(int j = 0; j < map.y; j++) {
-				System.out.print(map.map[i * map.x + j] + " ");
+				System.out.print(map.map[i * map.x + j] + "	");
 			}
 		}
 	}
