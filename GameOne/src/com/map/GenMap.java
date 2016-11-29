@@ -13,6 +13,8 @@ public class GenMap {
 	
 	//Operates directly on map.map
 	public static void generateMap() {
+		long startTime = System.nanoTime();
+		
 		for(int i = 0; i < map.map.length; i++) {
 			map.map[i] = -1;
 		}
@@ -21,19 +23,24 @@ public class GenMap {
 		//int[] randy = new int[map.cells];
 		
 		for(int i = 0; i < map.cells; i++) {
-			int randx = rand.nextInt(map.xi);
-			int randy = rand.nextInt(map.yi);
+			map.randx[i] = rand.nextInt(map.xi);
+			map.randy[i] = rand.nextInt(map.yi);
 			
-			map.setIVal(map.map, i, randx, randy, i);
+			map.setIVal(map.map, i, map.randx[i], map.randy[i], i);
 		}
 		
-		printMap();
+		long endTime = System.nanoTime();
+		double netTime = (endTime - startTime) / Math.pow(10, 9);
+		System.out.println(netTime + " seconds");
+		
+		//printMap();
 	}
 	
 	public int manDist(int p1, int p2) {
 		return Math.abs(map.xDim(p1) - map.xDim(p2)) + Math.abs(map.yDim(p1) - map.yDim(p2));
 	}
 	
+	@SuppressWarnings("unused")
 	private static void printMap() {
 		for(int i = 0; i < map.x; i++) {
 			System.out.println();

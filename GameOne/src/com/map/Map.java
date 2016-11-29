@@ -5,8 +5,8 @@ public class Map
 	//x is the horizontal resolution of the map (km)
 	//y is the vertical resolution of the map (km)
 	//map is the map array
-	public final int x = 8;
-	public final int y = 8;
+	public final int x = 100;
+	public final int y = 100;
 	public int[] map = new int[x * y];
 	
 	//xo is the x dimension of each outer box
@@ -16,6 +16,9 @@ public class Map
 	public final int cells = x / xo * y / yo;
 	public final int xcells = x / xo;
 	public final int ycells = y / yo;
+	
+	public int[] randx = new int[cells];
+	public int[] randy = new int[cells];
 
 	//xb is the dimension of the buffer on the x side
 	//yb is the dimension of the buffer on the y side
