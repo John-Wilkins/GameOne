@@ -8,6 +8,7 @@ public class Map
 	public final int x = 20000;
 	public final int y = 10000;
 	public int[] map = new int[x * y];
+
 	
 	//xo is the x dimension of each outer box
 	//yo is the y dimension of each outer box
@@ -39,6 +40,7 @@ public class Map
 	
 	//t is the number of traits (including land/ocean) in Array 2
 	public final int t = 10;
+	Object [] traits = new Object[cells];
 	
 	public int whichCell(int p) {
 		//c is initialized to -2 for the sake of debugging
