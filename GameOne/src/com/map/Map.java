@@ -40,7 +40,7 @@ public class Map
 	
 	//t is the number of traits (including land/ocean) in Array 2
 	public final int t = 10;
-	//This is the array of traits
+	//This is the array of traits, we need to define the traits in the meeting
 	Object [] traits = new Object[cells];
 	
 	public int whichCell(int p) {
