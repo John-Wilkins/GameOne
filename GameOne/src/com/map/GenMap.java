@@ -5,7 +5,7 @@ import java.util.Random;
 public class GenMap {
 	private static Map map = new Map();
 	private static Random rand = new Random();
-	
+	//Testing Push - Evan
 	public static void main(String[] args) {
 		//System.out.println(map.iVal(map.map, 1, 1, 1, 1));
 		generateMap();
