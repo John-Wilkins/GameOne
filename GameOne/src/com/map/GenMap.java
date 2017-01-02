@@ -30,6 +30,15 @@ public class GenMap {
 			map.nodes[i] = map.iToP(map.map, i, map.randx[i], map.randy[i]);
 		}
 		
+		for(int i = 0; i < map.cells; i++) {
+			int[] neighbors = map.pNeighbors(i);
+			int min = -1;
+			int minc = -1;
+			for(int j = 1; j < neighbors[0]; j++) {
+				//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+			}
+		}
+		
 		long endTime = System.nanoTime();
 		double netTime = (endTime - startTime) / Math.pow(10, 9);
 		System.out.println(netTime + " seconds");
